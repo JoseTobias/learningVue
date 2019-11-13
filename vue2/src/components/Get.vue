@@ -3,16 +3,17 @@
     <input type="text" v-model="search" placeholder="search">
     <h1>All informations from get</h1>
     <div v-for="info in filteredInfo" :key="info.id" class="single-information">
-        <h2>{{ info.title }}</h2>
-        <article>{{ info.body }}</article>
+      <router-link :to="'/get/' + info.id"><h2>{{ info.title }}</h2></router-link>
+      <article>{{ info.body }}</article>
     </div>
   </div>
 </template>
 
 <script>
+import Search from '../mixins/search'
 
 export default {
-  name: 'Gets',
+  name: 'Get',
   data() {
     return {
         infos: [],
@@ -27,12 +28,8 @@ export default {
     })
   },
   computed:  {
-      filteredInfo: function() {
-          return this.infos.filter((data) => {
-            return data.title.match(this.search)
-          })
-      }
-  }
+  },
+  mixins: [Search]
 }
 </script>
 
@@ -47,5 +44,14 @@ export default {
     box-sizing: border-box;
     background-color: #eee;
     margin: 20px 0;
+}
+
+a {
+  color: #152AC7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #455BF2;
 }
 </style>
