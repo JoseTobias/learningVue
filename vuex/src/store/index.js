@@ -20,6 +20,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    reducePrice: context => {
+      setTimeout(() => {
+        context.commit('reducePrice')
+      }, 2000);
+    }
   },
   modules: {
   },
