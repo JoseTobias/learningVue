@@ -28,19 +28,13 @@
       <button @click.prevent="post">Post</button>
 
       <div v-if="submitted">OK</div>
-
-      <Get />
   </div>
 </template>
 
 <script>
-import Get from './Get.vue'
 
 export default {
-  name: 'Input',
-  components: {
-    Get
-  },
+  name: 'input',
   data() {
     return {
       message: '',

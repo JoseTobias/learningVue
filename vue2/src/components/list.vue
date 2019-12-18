@@ -3,11 +3,6 @@
       <ul>
           <li v-for="item in itens" :key="item">{{ item }}</li>
       </ul>
-      <!-- <template v-for="item in itens">
-        <h2>{{ item }}</h2>
-      </template> -->
-
-      <h1 v-show="teste">{{ teste }}</h1>
     
       <Input />
   </div>
