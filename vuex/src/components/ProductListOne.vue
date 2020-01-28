@@ -19,9 +19,9 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'ProductListOne',
   computed: {
-    products() {
-        return this.$store.state.products
-    },
+    // products() {
+    //     return this.$store.state.products
+    // },
     ...mapGetters([
         'saleProducts'
     ])
